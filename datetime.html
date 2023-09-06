@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="show">show date & time</button>
+    <p class="first"></p>
+    
+    <input type="date" >
+    <button class="check"> get age </button>
+    
+    <p class="second"></p>
+    <script>
+        let input=document.querySelector('input')
+        let bttn=document.querySelector('.show')
+        let btn=document.querySelector('.check')
+        let para=document.querySelector('.first')
+        let paragraph=document.querySelector('.second')
+
+        bttn.onclick=()=>{
+            setInterval(runtime,1000)
+            function runtime(){
+            let date = new Date();
+            time=date.toLocaleTimeString();
+            d=date.toDateString();
+            para.innerHTML=d+time
+            }
+
+         }
+
+
+
+         btn.onclick=()=>{
+                let date=new Date();
+                let newdate = new Date(input.value)
+            
+                let a=newdate.getDate()               
+                let b=newdate.getMonth()
+                let c=newdate.getFullYear()
+
+                let x=date.getDate()
+                let y=date.getMonth()
+                let z=date.getFullYear()
+
+                paragraph.innerHTML=Number(z-c)+'years'+" "+Number(y-b)+'months'+" "+Number(x-a)+'days'+" "
+
+         }
+            
+        
+    
+        
+    </script>
+</body>
+</html>
